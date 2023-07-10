@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anusheh's Website</title>
+  <link rel="icon" type="image/x-icon" href="istockphoto-178600303-612x612.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/cjs/popper.min.js">
+      <script src="https://kit.fontawesome.com/e74610da6e.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+      <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      $('form').submit(function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        var name = $('#name').val();
+        var email = $('#email').val();
+
+        if (name === '') {
+          alert('Please enter your name.');
+          return;
+        }
+
+        if (email === '') {
+          alert('Please enter your email.');
+          return;
+        }
+
+        // Additional email validation using regular expression
+        var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailRegex.test(email)) {
+          alert('Please enter a valid email address.');
+          return;
+        }
+
+        // If all validations pass, you can proceed with form submission
+        alert('Form submitted successfully!');
+        // You can uncomment the line below to actually submit the form
+        // $('form').unbind('submit').submit();
+      });
+    });
+  </script>
+  <style>
+    /* Custom CSS for the side navbar */
+    .sidebar {
+      height: 100%;
+      width: 245px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: black;
+      overflow-x: hidden;
+      padding-top: 40px;
+    }
+
+    .sidebar a {
+      padding-bottom: 18px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      text-align: center;
+      font-weight: 50px;
+      font-size: 20px;
+    }
+
+    .sidebar a:hover {
+      color: rgb(233, 21, 233);
+    }
+    .rounded-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin: auto;
+      display: block;
+    }
+    ul {
+        display: inline-flex;
+        margin-top: 50px;
+        list-style-type: none;
+    }
+    ul li {
+        padding-right: 25px;
+    }
+  
+    .sidebar-sticky {
+      position: fixed;
+      top: 0;
+    }
+    .main {
+      margin-bottom: 2px;
+    }
+    ul li {
+        padding-right: 25px;
+    }
+  
+  
+    h1{
+      margin-top: 45px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    p{
+      line-height: 27px;
+      word-spacing: 3px;
+      text-align: justify;
+    }
+    button {
+      color: white;
+      background-color: rgb(233, 21, 233);
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-top: 8px;
+      padding-bottom: 10px;
+      border-radius: 30px;
+      border: none;
+      font-size: 20px;
+    }
+    button:hover{
+      background-color: rgb(168, 27, 168);
+      box-shadow: 2px 2px 2px 2px rgb(139, 134, 134);
+    }
+    .align h2 {
+      font-size: 60px;
+    }
+    .align h2, h5 {
+      color: rgb(126, 123, 123);
+      text-align: center;
+    }
+    .progress {
+      height: 15px;
+
+}
+.icon-align ul li {
+  list-style-type: none;
+}
+.icon-align a:hover {
+  color:  #db14f5;
+
+}
+
+.icon-align ul {
+  margin-top: 8px;
+  padding-left: 2px;
+}
+/* mesonary part */
+.masonry { /* Masonry container */
+    -webkit-column-count: 3;
+  -moz-column-count:3;
+  column-count: 3;
+  -webkit-column-gap: 1em;
+  -moz-column-gap: 1em;
+  column-gap: 1em;
+   margin: 1.5em;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+.item {
+    display: inline-block;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+	/* -webkit-transition:1s ease all; */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+.item img{max-width:100%; height: auto;}
+#more
+ {display: none;}
+ #max
+ {display: none;}
+ #maxi
+ {display: none;}
+ #maxim
+ {display: none;}
+footer {
+  padding: 70px;
+  background-color: #e2dfe2;
+  margin-top: 15px;
+}
+footer h5 {
+  float: left;
+}
+#float{
+  margin-left: 180px;
+}
+.marginleft{
+  margin-left: 250px;
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  display: inline-flex;
+}
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400px;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  line-height: 95px;
+  /* background: white; */
+  height: 100px;
+  overflow: hidden;
+
+}
+.dynamic-txts li {
+  list-style: none;
+  font-size:60px ;
+  font-weight: 500px;
+  color: #fff;
+  animation :slide 6s steps(4) infinite ;
+  position: relative;
+  top: 0;
+} 
+.dynamic-txts li span {
+  position: relative;
+}
+
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-left: 6px solid rgb(233, 21, 233);
+  animation :typing 1.5s steps(4) infinite ;
+  /* background:white ; */
+}
+@keyframes slide {
+  100%{
+    top:-360px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+}
+.text-overlay h2 {
+  font-size: 60px;
+}
+@media only screen and (max-width: 320px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px){
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1200px){
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+@media only screen and (min-width: 1201px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+@media (max-width: 768px) {
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      color: #fff;
+      width: 160px;
+      padding-top: 5px;
+      margin-left: 0px;
+    }
+    .marginleft{
+  margin-left: 161px;
+}
+
+  }
+
+  </style>
+</head>
+<body>
+  <!-- Side Navbar -->
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 bg-dark sidebar">
+        <div class="sidebar-sticky">
+  <div class="sidebar">
+    <img src="img.jpg" alt="Avatar" class="rounded-picture">
+    <a href="#home" style="font-family: cursive; font-size: 25px; margin-bottom: 20px;">Anusheh Younas</a>
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+    <ul>
+        <li><i class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></li>
+        <li><i class="fa-brands fa-twitter" style="color: #ffffff;"></i></li>
+        <li><i class="fa-brands fa-linkedin-in" style="color: #ffffff;"></i></li>
+        <li><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+<div id="home" class="container-fluid" class="image-container">
+  <img id="img3" src="pexels-mateusz-dach-450035.jpg" alt="" width="100%" height="660">
+</div>
+<div class="text-overlay">
+  <div class="wrapper">
+    <div class="static-txt">I'm a</div>
+    <div class="dynamic-txts">
+      <li> <span>Web Developer</span> </li>
+      <li> <span>Freelancer</span> </li>
+      <li> <span>Graphic Designer</span> </li>
+      <li> <span>App Developer </span> </li>
+
+    </div>
+  </div>
+ </div>
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10"></main>
+  <!-- Content -->
+  <div class="marginleft"> 
+    <div class="container">
+      <h1 id="about">KNOW ME MORE</h1>
+      <div class="row">
+        <div class="col-sm-7">
+          <h3>I'm <span style="color:rgb(233, 21, 233);">Anusheh Younas</span>, a Web Developer</h3>
+          <p>My name is Anusheh. I am a positive, enthusiastic and competent Web Developer.I help you build brand for your business at an affordable price. Thousands of clients have procured exceptional results while working with our dedicated team.<br> when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            
+            Delivering work within time and budget which meets client’s requirements is our moto. Lorem Ipsum has been the industry's standard dummy text ever when an unknown printer took a galley.</p>
+        </div>
+        <div class="col-sm-4">
+          <div>
+            <p><b>Name:</b> Anusheh Younas</p><hr>
+            <p><b>Email:<a href="mailto: anushehyouns@gmail.com"> anushehyounas@gmail.com</a></b></p><hr>
+            <p><b>Age:</b> 25</p><hr>
+            <p><b>From:</b> Lahore, Pakistan</p>
+            <a href="CV_HAFSA.docx"><button type="button">Download cv</button></a>
+          </div>
+        </div>
+      </div>
+      <div class="align" style="margin-top: 40px;">
+        <div class="row">
+          <div class="col-sm-3" style="border-right: 2px solid  rgb(236, 224, 224);">
+            <h2>1+</h2>
+            <h5>Years Experience</h5>
+          </div>
+          <div class="col-sm-3" style="border-right: 2px solid rgb(236, 224, 224);">
+            <h2>10+</h2>
+            <h5>Happy Clint</h5>
+          </div>
+          <div class="col-sm-3" style="border-right: 2px solid rgb(236, 224, 224);">
+            <h2>10+</h2>
+            <h5>Project Done</h5>
+          </div>
+          <div class="col-sm-3">
+            <h2>03+</h2>
+            <h5>Get Rewards</h5>
+          </div>
+      </div>
+      <div><h1 id="services">What I Do</h1></div>
+      <div class="row">
+     <div class="col-sm-1">
+      <img src="palette-solid.svg" alt="graphic design" width="50px" height="50px";>
+     </div>
+     <div class="col-sm-4"> 
+      <h5>Graphic Design</h5>
+      <p>Highly skilled, detail-oriented graphic designer with over eight years of experience working with clients in a variety of mediums, including print design and multimedia. <span id="dots">...</span> <span id="more"> Passionate about constructing and maintaining partnerships that result in creative wins that drive customer interest and profits. Dynamic and innovative professional with 2+ years of hands on experience in handling several simultaneous creative design, projects, concepts creation, graphic desige and  animation.</span></p>
+      <button onclick="myFunction()" id="myBtn" style="padding: 3px; margin-left: 3px; border-radius: 4px;  font-size: 15px;">Read more</button>
+     </div>
+     <div class="col-sm-1"></div>
+     <div class="col-sm-1">
+      <img src="tv-solid.svg" alt="" width="50px" height="50px">
+     </div>
+     <div class="col-sm-4">
+      <h5>Web Design</h5>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas distinctio labore, voluptatem laboriosam nihil accusantium exercitationem  <span id="min">...</span> <span id="max"> corrupti, sapiente ab. Ea consequatur commodi unde, consequuntur ipsum odio facere cupiditate ratione illo itaque praesentium atque molestiae similique delectus perspiciatis eos maxime consectetur dicta, dolorum esse eligendi? Fuga reiciendis error fugit, facilis doloribus qui asperiores excepturi non eos nihil laborum in </span></p>
+      <button onclick="myFunction()" id="myBtn2" style="padding: 3px; margin-left: 3px; border-radius: 4px;  font-size: 15px;">Read more</button>
+     </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-1">
+         <img src="bullhorn-solid.svg" alt="" width="50px" height="50px">
+        </div>
+        <div class="col-sm-4"> 
+          <h5>SEO Marketing</h5>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas distinctio labore, voluptatem laboriosam nihil accusantium exercitationem  <span id="mini">...</span> <span id="maxi"> corrupti, sapiente ab. Ea consequatur commodi unde, consequuntur ipsum odio facere cupiditate ratione illo itaque praesentium atque molestiae similique delectus perspiciatis eos maxime consectetur dicta, dolorum esse eligendi? Fuga reiciendis error fugit, facilis doloribus qui asperiores excepturi non eos nihil laborum in </span></p>
+      <button onclick="myFunction()" id="myBtn3" style="padding: 3px; margin-left: 3px; border-radius: 4px;  font-size: 15px;">Read more</button>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1">
+         <img src="paintbrush-solid (2).svg" alt="" width="50px" height="50px">
+        </div>
+
+        <div class="col-sm-4">
+         <h5>App Design & Develop</h5>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas distinctio labore, voluptatem laboriosam nihil accusantium exercitationem  <span id="minim">...</span> <span id="maxim"> corrupti, sapiente ab. Ea consequatur commodi unde, consequuntur ipsum odio facere cupiditate ratione illo itaque praesentium atque molestiae similique delectus perspiciatis eos maxime consectetur dicta, dolorum esse eligendi? Fuga reiciendis error fugit, facilis doloribus qui asperiores excepturi non eos nihil laborum in </span></p>
+         <button onclick="myFunction()" id="myBtn4" style="padding: 3px; margin-left: 3px; border-radius: 4px;  font-size: 15px;">Read more</button>
+        </div>
+         </div>
+    </div>
+  </div>
+  <h1 id="skills">My Skills</h1>
+  <div class="container">
+    <div class="row">
+    <div class="col-sm-6">
+
+  <h2>MY SKILL VALUES</h2>
+  <h4>TECHNICAL SKILLS</h4>
+  <p>Web Design</p> 
+  <div class="progress">
+    <div class="progress-bar h-15" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%;">
+      65% 
+    </div>
+  </div>
+  <p>HTML</p> 
+  <div class="progress">
+    <div class="progress-bar h-15" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%;">
+      85% 
+    </div>
+  </div>
+  <p>CSS</p>
+  <div class="progress">
+    <div class="progress-bar h-15" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+      80% 
+    </div>
+  </div>
+  <p>BOOTSTRAP</p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+      80%
+    </div>
+  </div>
+  <p>JAVA SCRIPT</p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      20%
+    </div>
+  </div>
+  <p>PHP</p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">
+      20%
+    </div>
+  </div>
+  <p>WORDPRESS</p>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+      90%
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+    
+    <h3 style="margin-left: 50px;">KNOWLEDGE</h3>
+    <ul style="display: inline-block; margin-left: 50px; line-height: 35px;">
+        <li>LOGO DESIGN</li>
+        <li>GRAPHIC DESIGN</li>
+        <li>UI UX DESIGN</li>
+        <li>SEO OPTIMIZATION</li>
+        <li>THEME CUSTUMIZATION</li>
+        <li>PLUGIN CUSTOMIZATION</li>
+        <li>PLUGIN INSTALLATION</li>
+        <li>JQUERY</li>
+        <li>PHYTHON</li>
+
+    </ul>
+</div>
+</div>
+<h1 id="work">My Work</h1>
+<div class="masonry">
+  <div class="item">
+    1
+    <img src="Screenshot (4).png" alt="table">
+  </div>
+  <div class="item">
+    2
+    <img src="Screenshot (3).png">
+  </div>
+  <div class="item">
+    3
+    <img src="Screenshot (6).png">
+  </div>
+  <div class="item">
+    4
+    <img src="Screenshot (7).png">
+  </div>
+  <div class="item">
+    5
+    <img src="Screenshot (8).png">
+  </div>
+  <div class="item">
+    6
+    <img src="Screenshot (9).png">
+  </div>
+  <div class="item">
+    7
+    <img src="Screenshot (10).png">
+  </div>
+  <div class="item">
+    8
+    <img src="Screenshot (11).png">
+  </div>
+  <div class="item">
+    9
+    <img src="Screenshot (12).png">
+  </div>
+</div>
+<h1 id="contact">Get in Touch</h1>
+<div class="containter">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4>CONTACT ADDRESS</h4><br>
+      <address>
+        <i class="fa-solid fa-location-dot" style="color:  #db14f5;"></i>
+        New Jail Road, Chungi Amer Sidhu,<br>
+        Lahore, Pakistan
+      </address>
+      
+      <i class="fa-solid fa-phone" style="color: #db14f5;"></i>
+      <span> 0346 0041737</span><br><br>
+      <i class="fa-solid fa-bag-shopping" style="color: #db14f5;"></i>
+      <span>0308 8352422</span><br><br>
+      <i class="fa-solid fa-envelope" style="color: #db14f5;"></i>
+      <span>anushehyounas@gmail.com</span><br><br>
+      <h4>FOLLOW ME</h4>
+      <div class="icon-align">
+      <ul>
+       <li><a href="https://www.facebook.com/profile.php?id=100067906479409&mibextid=ZbWKwL"><i class="fa-brands fa-facebook-f"></i></a></li>
+        <li><a href=" https://twitter.com/AthwalRida?t=0hQZBz9oGAOTH0wuD-41TQ&s=08"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="https://github.com/Anusheh-Younas/"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://www.google.com/"><i class="fa-brands fa-google"></i></a></li>
+      </ul>
+    </div>
+    </div>
+  <div class="col-sm-6">
+    <h4>SEND US A NOTE</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+      </div>
+    
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell us more about your needs..."></textarea>
+      </div>
+      
+     <button type="submit" style="margin-top: 30px; margin-left: 130px;">Send Message</button>
+    </form>
+
+  </div>
+</div>
+</div>
+</div>
+</main>
+<footer>
+  <h5>Copyright © 2023 Anusheh. All Rights Reserved. <span id="float">Terms & Policy  Desclaimer</span> </h5>
+</footer>
+
+<script>
+  function myFunction() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+    var btnText = document.getElementById("myBtn");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+    function myFunction() {
+    var dots = document.getElementById("min");
+    var moreText = document.getElementById("max");
+    var btnText = document.getElementById("myBtn2");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+    function myFunction() {
+    var dots = document.getElementById("mini");
+    var moreText = document.getElementById("maxi");
+    var btnText = document.getElementById("myBtn3");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+     function myFunction() {
+    var dots = document.getElementById("minim");
+    var moreText = document.getElementById("maxim");
+    var btnText = document.getElementById("myBtn4");
+  
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      btnText.innerHTML = "Read more"; 
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  </script>
+</body>
+</html>
